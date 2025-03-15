@@ -6,14 +6,9 @@ import AboutPage from './AboutPage';
 function App(props) {
   return (
     <div>
-      <header className="jumbotron py-4 mb-4">
-        <div className="container">
-          <h1>
-            Alex Berry
-          </h1>
-        </div>
-      </header>
       <AboutNav />
+      <div className='p-5' />
+      <div className='p-5' />
       <AboutPage />
       <PetPage />
     </div>

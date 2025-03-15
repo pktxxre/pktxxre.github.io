@@ -1,41 +1,27 @@
-/* Include custom colors and sizing */
-
-header.jumbotron {
-  background-color: #2d708d;
-  color: white;
+html {
+  scroll-behavior: smooth;
 }
 
-header.jumbotron a, header.jumbotron a:hover {
-  color: white;
+body {
+  background-image: url("/src/components/img/seattle.jpg");
+  /* background-attachment: fixed; */
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-nav {
-  background-color: #ddd;  
-  margin-bottom: 2em; 
-  padding: 1em;  
+.container {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(255, 255, 255, 0.75);
+  max-width: 1000px;
+  border-radius: 10px;
+  padding: 32px;
 }
 
-nav h2 {
-  font-size: 1.25rem;
-}
-
-/* keep images in check */
-.card-deck .card {
-  flex-basis: 200px;
-  margin-bottom: 30px;
-}
-
-nav .active {
-  background-color:#eee;
-  padding: .25em 1em;
-  border: 1px solid #ddd;
-}
-
-.carousel {
-  width:350px;
-  margin-bottom: 1em;
-}
-
-.clickable {
-  cursor: pointer;
+img {
+  max-width: 300px;
+  border-radius: 15px;
 }

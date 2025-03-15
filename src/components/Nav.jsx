@@ -4,11 +4,10 @@ import { NavLink } from 'react-router';
 
 export function AboutNav() {
   return (
-    <nav id="aboutLinks">
-      <h2>About</h2>
-      <ul className="list-unstyled">
-        <li>Home</li>
-      </ul>
+    <nav className='nav p-3 d-flex flex-row-reverse text-bg-light'>
+      <a className='nav-link' href='#'>LinkedIn</a>
+      <a className='nav-link' href='#'>Github</a>
+      <a className='nav-link' href='#'>Resume</a>
     </nav>
   );
 }
