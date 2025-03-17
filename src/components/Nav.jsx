@@ -4,13 +4,10 @@ import { NavLink } from 'react-router';
 
 export function AboutNav() {
   return (
-    <nav className='nav p-3 d-flex flex-row-reverse text-bg-light'>
+    <nav className='nav p-3 d-flex flex-row-reverse border-bottom'>
       <a className='nav-link' href='#'>LinkedIn</a>
       <a className='nav-link' href='#'>Github</a>
       <a className='nav-link' href='#'>Resume</a>
     </nav>
   );
 }
-<nav>
-      <NavLink to="/" end>Home</NavLink>
-</nav>
