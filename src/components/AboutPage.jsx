@@ -3,13 +3,15 @@ import AlexImage from '../components/img/Alex.jpeg'
 
 export default function AboutPage() {
   return (
-    <div className='container'>
-      <div className='cards'>
-        <img src={AlexImage} />
+    <section>
+      <div className='container my-5'>
+        <div className=''>
+          <img src={AlexImage} />
+        </div>
+        <div className=''>
+          <a>My name is Alex Berry</a>
+        </div>
       </div>
-      <div className='cards'>
-        <a>My name is Alex Berry</a>
-      </div>
-    </div>
+    </section>
   );
 }
