@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SkillsPage(props) {
     return (
-        <div>
+        <section>
             <div className='container my-5'>
                 <div className='wrap'>
                     <div className='d-flex flex-row justify-content-around'>
@@ -40,6 +40,6 @@ export default function SkillsPage(props) {
                    
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
