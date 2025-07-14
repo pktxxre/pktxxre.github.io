@@ -1,3 +1,4 @@
+/*
 html {
   scroll-behavior: smooth;
 }
@@ -11,9 +12,6 @@ body {
   background-size: cover;
 }
 
-section {
-  /* background-color: white; */
-}
 
 .container {
   display: grid;
@@ -60,7 +58,6 @@ img {
 .wrap {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
 }
 
 .cards h3 {
@@ -69,5 +66,5 @@ img {
 
 .left {
   max-width: 300px;
-  max-height: 300px;
 }
+*/

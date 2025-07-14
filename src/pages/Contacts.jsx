@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 
 export default function SkillsPage(props) {
     return (
@@ -42,4 +42,56 @@ export default function SkillsPage(props) {
             </div>
         </section>
     )
+} */
+/*
+import React from 'react';
+
+// Creating reusable skill card component
+function SkillCard({ skillName }) {
+  return (
+    <div className="card mb-3 shadow-sm">
+      <div className="card-body text-center">
+        <h3>{skillName}</h3>
+      </div>
+    </div>
+  );
+}
+
+export default function SkillsPage() {
+  const technicalSkills = ['Java', 'R', 'HTML', 'JavaScript', 'CSS'];
+  const languageSkills = ['Korean', 'Japanese', 'English'];
+  
+  return (
+    <section className="bg-light py-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 mb-4">
+            <h2 className="text-center mb-4 text-decoration-underline">Technical Skills</h2>
+            {technicalSkills.map((skill, index) => (
+              <SkillCard key={`tech-${index}`} skillName={skill} />
+            ))}
+          </div>
+          <div className="col-md-6 mb-4">
+            <h2 className="text-center mb-4 text-decoration-underline">Language Skills</h2>
+            {languageSkills.map((skill, index) => (
+              <SkillCard key={`lang-${index}`} skillName={skill} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+  */
+import React from 'react';
+
+export default function Contact() {
+  return (
+    <section id="contact">
+      <h2 className="text-2xl font-bold mb-6 border-b pb-2">Contact</h2>
+      <div className="bg-white p-6 rounded-md shadow-md">
+        {/* Add your contact form or details here */}
+      </div>
+    </section>
+  );
 }

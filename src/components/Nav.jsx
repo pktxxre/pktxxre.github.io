@@ -1,13 +1,16 @@
-import React from 'react'; //import React Component
-import { NavLink } from 'react-router';
-
+import React from 'react';
 
 export function AboutNav() {
   return (
-    <nav className='nav p-3 d-flex flex-row-reverse border-bottom'>
-      <a className='nav-link' href='#'>LinkedIn</a>
-      <a className='nav-link' href='#'>Github</a>
-      <a className='nav-link' href='#'>Resume</a>
+    <nav className="navbar navbar-expand navbar-light bg-light border-bottom">
+      <div className="container">
+        <span className="navbar-brand">Alex Berry</span>
+        <div className="navbar-nav ms-auto">
+          <a className="nav-link" href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a className="nav-link" href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a className="nav-link" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
     </nav>
   );
 }
