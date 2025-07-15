@@ -1,39 +1,50 @@
+html {
+scroll-behavior: smooth;
+}
+
 .nav-indicator {
-    display: inline-block;
-    height: 1px;           /* h-px */
-    width: 2rem;           /* w-8 = 2rem */
-    background-color: #64748b; /* slate-600 */
-    transition: all 0.3s ease;
-    flex-shrink: 0;        /* prevent shrinking */
-    /* margin-right: 1rem equivalent to me-4 in bootstrap */
-    margin-right: 1rem;
+  display: inline-block;
+  height: 1px;   
+  width: 2rem;          
+  background-color: #64748b; 
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+/* Hover and focus states */
+.group:hover .nav-indicator,
+.group:focus-visible .nav-indicator {
+  width: 4rem;        
+  background-color: #e2e8f0; 
+}
+
+/* For users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .nav-indicator {
+    transition: none;
   }
-  
-  /* Hover and focus states */
-  .group:hover .nav-indicator,
-  .group:focus-visible .nav-indicator {
-    width: 4rem;           /* w-16 = 4rem */
-    background-color: #e2e8f0; /* slate-200 */
-  }
-  
-  /* For users who prefer reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .nav-indicator {
-      transition: none;
-    }
-  }
-  
-  .nav-text {
-    font-size: 0.75rem;    /* text-xs */
-    font-weight: 700;      /* font-bold */
-    text-transform: uppercase;
-    letter-spacing: 0.1em; /* tracking-widest, approx */
-    color: #64748b;        /* slate-500 */
-    transition: color 0.3s ease;
-  }
-  
-  .group:hover .nav-text,
-  .group:focus-visible .nav-text {
-    color: #e2e8f0;        /* slate-200 */
-  }
-  
+}
+
+.nav-text {
+  font-size: 0.75rem;   
+  font-weight: 700;  
+  text-transform: uppercase;
+  letter-spacing: 0.1em; 
+  color: #64748b;       
+  transition: color 0.2s ease;
+}
+
+.group:hover .nav-text,
+.group:focus-visible .nav-text {
+  color: #e2e8f0;      
+}
+
+.nav-link-custom.active .nav-indicator {
+  width: 4rem;
+  background-color: #e2e8f0;
+}
+
+.nav-link-custom.active .nav-text {
+  color: #e2e8f0;
+}
