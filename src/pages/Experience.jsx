@@ -80,12 +80,54 @@ export default function ProjectsPage() {
 import React from 'react';
 
 export default function Experience() {
+  const experiences = [
+    {
+      date: "2023 — Present",
+      title: "Senior Frontend Developer",
+      company: "Tech Solutions Inc.",
+      description: "Lead frontend development for multiple client projects, focusing on React applications and component libraries. Collaborate with design teams to implement pixel-perfect, accessible user interfaces.",
+      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL", "Jest"]
+    },
+    {
+      date: "2021 — 2023",
+      title: "Frontend Developer",
+      company: "Digital Agency Co.",
+      description: "Developed and maintained responsive web applications for diverse clients. Implemented modern frontend technologies and best practices, including automated testing and CI/CD workflows.",
+      technologies: ["React", "JavaScript", "SCSS", "Node.js", "MongoDB", "Docker"]
+    },
+    {
+      date: "2020 — 2021",
+      title: "Junior Web Developer",
+      company: "Startup Hub",
+      description: "Built user-facing features for a growing SaaS platform. Worked closely with the product team to translate wireframes and mockups into functional, responsive web components.",
+      technologies: ["HTML", "CSS", "JavaScript", "Vue.js", "PHP", "MySQL"]
+    },
+    {
+      date: "2019 — 2020",
+      title: "Frontend Intern",
+      company: "Creative Studio",
+      description: "Assisted in the development of marketing websites and landing pages. Gained experience with modern development tools and agile methodologies.",
+      technologies: ["HTML", "CSS", "JavaScript", "jQuery", "WordPress", "Git"]
+    }
+  ];
+
   return (
-    <section id="experience" className="mb-5">
-      <h2 className="mb-4 border-bottom pb-2">Experience</h2>
-      <div className="card p-4">
-        {/* Add your job experiences here */}
-      </div>
-    </section>
+    <div className="experience-content">
+      {experiences.map((exp, index) => (
+        <div key={index} className="experience-item">
+          <div className="experience-date">{exp.date}</div>
+          <div className="experience-content">
+            <h3>{exp.title}</h3>
+            <div className="experience-company">{exp.company}</div>
+            <p className="experience-description">{exp.description}</p>
+            <div className="tech-stack">
+              {exp.technologies.map((tech, techIndex) => (
+                <span key={techIndex} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }

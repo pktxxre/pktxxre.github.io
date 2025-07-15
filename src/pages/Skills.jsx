@@ -1,36 +1,52 @@
 import React from 'react';
 
-function SkillCard({ skillName }) {
+export default function Skills() {
+  const skillCategories = [
+    {
+      category: "Frontend Technologies",
+      skills: [
+        "React", "Next.js", "Vue.js", "TypeScript", "JavaScript (ES6+)", 
+        "HTML5", "CSS3", "Sass/SCSS", "Tailwind CSS", "Bootstrap"
+      ]
+    },
+    {
+      category: "Backend & Database",
+      skills: [
+        "Node.js", "Express.js", "Python", "PostgreSQL", "MongoDB", 
+        "MySQL", "Redis", "GraphQL", "REST APIs", "Socket.io"
+      ]
+    },
+    {
+      category: "Tools & Platforms",
+      skills: [
+        "Git", "Docker", "AWS", "Vercel", "Netlify", "Heroku", 
+        "Webpack", "Vite", "Jest", "Cypress", "Figma", "Adobe Creative Suite"
+      ]
+    },
+    {
+      category: "Methodologies",
+      skills: [
+        "Agile/Scrum", "Test-Driven Development", "Responsive Design", 
+        "Accessibility (WCAG)", "Performance Optimization", "SEO", 
+        "CI/CD", "Code Reviews"
+      ]
+    }
+  ];
+
   return (
-    <div className="card mb-3 shadow-sm">
-      <div className="card-body text-center">
-        <h3>{skillName}</h3>
+    <div className="skills-content">
+      <div className="skills-grid">
+        {skillCategories.map((category, index) => (
+          <div key={index} className="skill-category">
+            <h3>{category.category}</h3>
+            <div className="skill-list">
+              {category.skills.map((skill, skillIndex) => (
+                <span key={skillIndex} className="skill-item">{skill}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  );
-}
-
-export default function Skills() {
-  const technicalSkills = ['Java', 'R', 'HTML', 'JavaScript', 'CSS'];
-  const languageSkills = ['Korean', 'Japanese', 'English'];
-
-  return (
-    <section id="skills" className="mb-5">
-      <h2 className="mb-4 border-bottom pb-2">Skills</h2>
-      <div className="row">
-        <div className="col-md-6 mb-4">
-          <h3 className="text-decoration-underline text-center mb-3">Technical Skills</h3>
-          {technicalSkills.map((skill, index) => (
-            <SkillCard key={`tech-${index}`} skillName={skill} />
-          ))}
-        </div>
-        <div className="col-md-6 mb-4">
-          <h3 className="text-decoration-underline text-center mb-3">Language Skills</h3>
-          {languageSkills.map((skill, index) => (
-            <SkillCard key={`lang-${index}`} skillName={skill} />
-          ))}
-        </div>
-      </div>
-    </section>
   );
 }
