@@ -2,8 +2,10 @@ import React from 'react';
 
 function SkillCard({ skillName }) {
   return (
-    <div className="bg-white shadow-md rounded-md p-4 text-center">
-      <h3 className="text-lg font-medium">{skillName}</h3>
+    <div className="card mb-3 shadow-sm">
+      <div className="card-body text-center">
+        <h3>{skillName}</h3>
+      </div>
     </div>
   );
 }
@@ -13,24 +15,20 @@ export default function Skills() {
   const languageSkills = ['Korean', 'Japanese', 'English'];
 
   return (
-    <section id="skills">
-      <h2 className="text-2xl font-bold mb-6 border-b pb-2">Skills</h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <h3 className="text-xl mb-4 underline">Technical Skills</h3>
-          <div className="grid grid-cols-2 gap-4">
-            {technicalSkills.map((skill, index) => (
-              <SkillCard key={`tech-${index}`} skillName={skill} />
-            ))}
-          </div>
+    <section id="skills" className="mb-5">
+      <h2 className="mb-4 border-bottom pb-2">Skills</h2>
+      <div className="row">
+        <div className="col-md-6 mb-4">
+          <h3 className="text-decoration-underline text-center mb-3">Technical Skills</h3>
+          {technicalSkills.map((skill, index) => (
+            <SkillCard key={`tech-${index}`} skillName={skill} />
+          ))}
         </div>
-        <div>
-          <h3 className="text-xl mb-4 underline">Language Skills</h3>
-          <div className="grid grid-cols-2 gap-4">
-            {languageSkills.map((skill, index) => (
-              <SkillCard key={`lang-${index}`} skillName={skill} />
-            ))}
-          </div>
+        <div className="col-md-6 mb-4">
+          <h3 className="text-decoration-underline text-center mb-3">Language Skills</h3>
+          {languageSkills.map((skill, index) => (
+            <SkillCard key={`lang-${index}`} skillName={skill} />
+          ))}
         </div>
       </div>
     </section>

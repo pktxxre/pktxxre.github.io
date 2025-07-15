@@ -81,9 +81,9 @@ import React from 'react';
 
 export default function Experience() {
   return (
-    <section id="experience">
-      <h2 className="text-2xl font-bold mb-6 border-b pb-2">Experience</h2>
-      <div className="bg-white p-6 rounded-md shadow-md">
+    <section id="experience" className="mb-5">
+      <h2 className="mb-4 border-bottom pb-2">Experience</h2>
+      <div className="card p-4">
         {/* Add your job experiences here */}
       </div>
     </section>

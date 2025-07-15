@@ -1,22 +1,49 @@
 import React from 'react';
-import Footer from './Footer'; // Optional if you want to include it here too
 
-const Sidebar = () => {
+export default function SideBar() {
   return (
-    <div className="w-1/2 fixed h-full bg-white p-8 flex flex-col justify-between border-r border-gray-200">
-      <div>
-        <img 
-        src={AlexImage} 
-        alt="Alex Berry" 
-        className="img-fluid rounded-circle mb-3" 
-        style={{ maxWidth: '200px' }} 
-        />
-        <h1 className="text-3xl font-bold">Your Name</h1>
-        <p className="mt-2 text-gray-600">Your tagline or title</p>
+    <div className="position-fixed top-0 start-0 vh-100 w-50 text-white d-flex flex-column justify-content-between">
+      <div className="w-100 d-flex justify-content-center">
+        <div className="p-4" style={{ maxWidth: '300px', width: '100%' }}>
+          <h1 className="mb-2">Alex Berry</h1>
+          <p className="text-secondary">Web Developer</p>
+          <nav className="nav flex-column mt-4">
+            <a href="#about" className="nav-link nav-link-custom text-white ps-0 group d-flex align-items-center" >
+              <span className="nav-indicator me-4"></span>
+              <span className="nav-text">About</span>
+            </a>
+            <a href="#about" className="nav-link nav-link-custom text-white ps-0 group d-flex align-items-center" >
+              <span className="nav-indicator me-4"></span>
+              <span className="nav-text">Experience</span>
+            </a>
+            <a href="#about" className="nav-link nav-link-custom text-white ps-0 group d-flex align-items-center" >
+              <span className="nav-indicator me-4"></span>
+              <span className="nav-text">Projects</span>
+            </a>
+            <a href="#about" className="nav-link nav-link-custom text-white ps-0 group d-flex align-items-center" >
+              <span className="nav-indicator me-4"></span>
+              <span className="nav-text">Skills</span>
+            </a>
+            <a href="#about" className="nav-link nav-link-custom text-white ps-0 group d-flex align-items-center" >
+              <span className="nav-indicator me-4"></span>
+              <span className="nav-text">Contact</span>
+            </a>
+          </nav>
+        </div>
       </div>
-      <Footer />
+      <div className="w-100 d-flex justify-content-center">
+        <footer className="text-muted small p-4" style={{ maxWidth: '300px', width: '100%' }}>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-white me-3">GitHub</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-white">LinkedIn</a>
+        </footer>
+      </div>
     </div>
   );
-};
-
-export default Sidebar;
+}
+/*
+            <a className="nav-link nav-link-custom text-white ps-0" href="#about">About</a>
+            <a className="nav-link nav-link-custom text-white ps-0" href="#experience">Experience</a>
+            <a className="nav-link nav-link-custom text-white ps-0" href="#projects">Projects</a>
+            <a className="nav-link nav-link-custom text-white ps-0" href="#skills">Skills</a>
+            <a className="nav-link nav-link-custom text-white ps-0" href="#contact">Contact</a>
+*/

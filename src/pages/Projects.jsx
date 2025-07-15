@@ -27,9 +27,9 @@ import React from 'react';
 
 export default function Projects() {
   return (
-    <section id="projects">
-      <h2 className="text-2xl font-bold mb-6 border-b pb-2">Projects</h2>
-      <div className="bg-white p-6 rounded-md shadow-md">
+    <section id="projects" className="mb-5">
+      <h2 className="mb-4 border-bottom pb-2">Projects</h2>
+      <div className="card p-4">
         {/* Add your project list or cards here */}
       </div>
     </section>

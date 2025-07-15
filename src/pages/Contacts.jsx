@@ -85,11 +85,11 @@ export default function SkillsPage() {
   */
 import React from 'react';
 
-export default function Contact() {
+export default function Contacts() {
   return (
-    <section id="contact">
-      <h2 className="text-2xl font-bold mb-6 border-b pb-2">Contact</h2>
-      <div className="bg-white p-6 rounded-md shadow-md">
+    <section id="contact" className="mb-5">
+      <h2 className="mb-4 border-bottom pb-2">Contact</h2>
+      <div className="card p-4">
         {/* Add your contact form or details here */}
       </div>
     </section>

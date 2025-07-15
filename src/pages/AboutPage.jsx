@@ -31,11 +31,11 @@ export default function AboutPage() {
 
 import React from 'react';
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <section id="about">
-      <h2 className="text-2xl font-bold mb-6 border-b pb-2">About</h2>
-      <div className="bg-white p-6 rounded-md shadow-md">
+    <section id="about" className="mb-5">
+      <h2 className="mb-4 border-bottom pb-2">About</h2>
+      <div className="card p-4">
         {/* Add your bio or description here */}
       </div>
     </section>
