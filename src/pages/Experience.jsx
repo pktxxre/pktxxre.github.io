@@ -82,25 +82,18 @@ import React from 'react';
 export default function Experience() {
   const experiences = [
     {
-      date: "2023 — Present",
-      title: "Senior Frontend Developer",
-      company: "Tech Solutions Inc.",
-      description: "Lead frontend development for multiple client projects, focusing on React applications and component libraries. Collaborate with design teams to implement pixel-perfect, accessible user interfaces.",
-      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL", "Jest"]
+      date: "January 2025 - March 2025",
+      title: "UW Study Hub",
+      company: "Client-side Development",
+      description: "Collaborated with a team of four to design a responsive platform that improves study efficiency for University of Washington students, making it easier to create, store, and review flashcards on any device.",
+      technologies: ["React", "JavaScript", "CSS", "HTML"]
     },
     {
-      date: "2021 — 2023",
-      title: "Frontend Developer",
-      company: "Digital Agency Co.",
-      description: "Developed and maintained responsive web applications for diverse clients. Implemented modern frontend technologies and best practices, including automated testing and CI/CD workflows.",
-      technologies: ["React", "JavaScript", "SCSS", "Node.js", "MongoDB", "Docker"]
-    },
-    {
-      date: "2020 — 2021",
-      title: "Junior Web Developer",
-      company: "Startup Hub",
-      description: "Built user-facing features for a growing SaaS platform. Worked closely with the product team to translate wireframes and mockups into functional, responsive web components.",
-      technologies: ["HTML", "CSS", "JavaScript", "Vue.js", "PHP", "MySQL"]
+      date: "January 2025 - March 2025",
+      title: "Revivo",
+      company: "Design Methods",
+      description: "Collaborated with a team of three to design a sustainability-focused app supporting the Right to Repair movement, using Figma to prototype features that help students reduce electronic waste.",
+      technologies: ["Figma", "Usability testing", "User testing", "User research", "Prototyping"]
     },
     {
       date: "2019 — 2020",

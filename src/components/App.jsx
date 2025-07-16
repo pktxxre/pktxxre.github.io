@@ -66,7 +66,12 @@ import useActiveSection from '../hooks/useActiveSection';
 
 export default function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const activeId = useActiveSection(['about', 'experience', 'projects', 'skills', 'contact']);
+  const [activeId, setActiveId] = useState('about');
+  const sectionInView = useActiveSection(['about', 'experience', 'projects', 'skills', 'contact']);
+
+  useEffect(() => {
+    setActiveId(sectionInView);
+  }, [sectionInView]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -97,7 +102,7 @@ export default function App() {
       {/* Main content */}
       <div className="main-layout">
         <div className="left-column">
-          <Sidebar activeId={activeId} />
+          <Sidebar activeId={activeId} setActiveId={setActiveId}/>
         </div>
         <div className="right-column">
           <main className="content-sections">

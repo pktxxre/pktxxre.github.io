@@ -44,7 +44,7 @@ export default function SideBar({ activeId }) {
   */
 import React from 'react';
 
-export default function SideBar({ activeId }) {
+export default function SideBar({ activeId, setActiveId }) {
   return (
     <div className="sidebar-container">
       <div className="sidebar-content">
@@ -59,7 +59,8 @@ export default function SideBar({ activeId }) {
         <nav className="sidebar-nav">
           <a 
             href="#about" 
-            className={`nav-link ${activeId === 'about' ? 'active' : ''}`}
+            className={`nav-link ${activeId === 'about' ? 'active' : ''}` }
+            onClick={() => setActiveId('about')}
           >
             <span className="nav-indicator"></span>
             <span className="nav-text">About</span>
@@ -67,6 +68,7 @@ export default function SideBar({ activeId }) {
           <a 
             href="#experience" 
             className={`nav-link ${activeId === 'experience' ? 'active' : ''}`}
+            onClick={() => setActiveId('experience')}
           >
             <span className="nav-indicator"></span>
             <span className="nav-text">Experience</span>
@@ -74,6 +76,7 @@ export default function SideBar({ activeId }) {
           <a 
             href="#projects" 
             className={`nav-link ${activeId === 'projects' ? 'active' : ''}`}
+            onClick={() => setActiveId('projects')}
           >
             <span className="nav-indicator"></span>
             <span className="nav-text">Projects</span>
@@ -81,6 +84,7 @@ export default function SideBar({ activeId }) {
           <a 
             href="#skills" 
             className={`nav-link ${activeId === 'skills' ? 'active' : ''}`}
+            onClick={() => setActiveId('skills')}
           >
             <span className="nav-indicator"></span>
             <span className="nav-text">Skills</span>
@@ -88,6 +92,7 @@ export default function SideBar({ activeId }) {
           <a 
             href="#contact" 
             className={`nav-link ${activeId === 'contact' ? 'active' : ''}`}
+            onClick={() => setActiveId('contact')}
           >
             <span className="nav-indicator"></span>
             <span className="nav-text">Contact</span>
