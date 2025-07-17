@@ -94,13 +94,6 @@ export default function Experience() {
       company: "Design Methods",
       description: "Collaborated with a team of three to design a sustainability-focused app supporting the Right to Repair movement, using Figma to prototype features that help students reduce electronic waste.",
       technologies: ["Figma", "Usability testing", "User testing", "User research", "Prototyping"]
-    },
-    {
-      date: "2019 — 2020",
-      title: "Frontend Intern",
-      company: "Creative Studio",
-      description: "Assisted in the development of marketing websites and landing pages. Gained experience with modern development tools and agile methodologies.",
-      technologies: ["HTML", "CSS", "JavaScript", "jQuery", "WordPress", "Git"]
     }
   ];
 

@@ -24,16 +24,16 @@ export default Projects;
 */
 
 import React from 'react';
+import uwHubLogo from '../components/img/uw-hub-logo.png';
 
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React and Node.js. Features include user authentication, product catalog, shopping cart, and payment processing with Stripe integration.",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe API", "JWT"],
-      image: "/api/placeholder/120/80",
-      github: "https://github.com/yourusername/ecommerce-platform",
-      demo: "https://ecommerce-demo.vercel.app"
+      title: "UW Study Hub",
+      description: "Collaborated with a team of four to design a responsive platform that improves study efficiency for University of Washington students, making it easier to create, store, and review flashcards on any device.",
+      technologies: ["React", "JavaScript", "CSS", "HTML"],
+      image: uwHubLogo,
+      github: "https://github.com/info340-wi25a/project-SantiagoG14",
     },
     {
       title: "Task Management App",
