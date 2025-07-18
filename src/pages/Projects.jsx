@@ -25,6 +25,7 @@ export default Projects;
 
 import React from 'react';
 import uwHubLogo from '../components/img/uw-hub-logo.png';
+import revivo from '../components/img/Revivo.png';
 
 export default function Projects() {
   const projects = [
@@ -36,13 +37,13 @@ export default function Projects() {
       github: "https://github.com/info340-wi25a/project-SantiagoG14",
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates. Built with React and Socket.io for real-time collaboration, featuring drag-and-drop functionality and team workspaces.",
-      technologies: ["React", "Socket.io", "Express", "PostgreSQL", "Redux", "Material-UI"],
-      image: "/api/placeholder/120/80",
-      github: "https://github.com/yourusername/task-manager",
-      demo: "https://task-manager-demo.netlify.app"
-    },
+      title: "Revivo",
+      description: "Collaborated with a team of three to design a sustainability-focused app supporting the Right to Repair movement, using Figma to prototype features that help students reduce electronic waste.",
+      technologies: ["Figma", "Usability testing", "User testing", "User research", "Prototyping"],
+      image: revivo,
+      demo: "https://www.figma.com/proto/0FlEqTnLaHVyFTnfLRvJ4r/Revivo?node-id=189-1318&p=f&t=SDFonaZgSGx7WEM8-1&scaling=scale-down&content-scaling=fixed&page-id=4%3A35&starting-point-node-id=189%3A1318"
+    }
+    /*
     {
       title: "Weather Dashboard",
       description: "A responsive weather application that provides current weather conditions and forecasts. Features location-based weather data, search functionality, and beautiful data visualizations.",
@@ -50,15 +51,7 @@ export default function Projects() {
       image: "/api/placeholder/120/80",
       github: "https://github.com/yourusername/weather-dashboard",
       demo: "https://weather-dashboard-demo.surge.sh"
-    },
-    {
-      title: "Portfolio Website",
-      description: "A personal portfolio website showcasing projects and skills. Built with modern web technologies and optimized for performance and accessibility.",
-      technologies: ["React", "Gatsby", "GraphQL", "Styled Components", "Netlify"],
-      image: "/api/placeholder/120/80",
-      github: "https://github.com/yourusername/portfolio-v2",
-      demo: "https://yourportfolio.com"
-    }
+    } */
   ];
 
   return (

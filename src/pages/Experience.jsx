@@ -82,18 +82,18 @@ import React from 'react';
 export default function Experience() {
   const experiences = [
     {
-      date: "January 2025 - March 2025",
-      title: "UW Study Hub",
-      company: "Client-side Development",
+      date: "June 2025 - August 2025",
+      title: "Information Technology Support Specialist Intern",
+      company: "SouthEast Alaska Regional Health Consortium (SEARHC)",
       description: "Collaborated with a team of four to design a responsive platform that improves study efficiency for University of Washington students, making it easier to create, store, and review flashcards on any device.",
-      technologies: ["React", "JavaScript", "CSS", "HTML"]
+      technologies: ["IT Operations", "Powershell", "Customer Support"]
     },
     {
-      date: "January 2025 - March 2025",
-      title: "Revivo",
-      company: "Design Methods",
-      description: "Collaborated with a team of three to design a sustainability-focused app supporting the Right to Repair movement, using Figma to prototype features that help students reduce electronic waste.",
-      technologies: ["Figma", "Usability testing", "User testing", "User research", "Prototyping"]
+      date: "October 2024 - Present",
+      title: "Sustainable Business Researcher",
+      company: "ReThink @ University of Washington",
+      description: "Wrote business spotlights for our RSO website, highlighting local Seattle businesses with strong sustainability practices and encouraging student engagement and support.",
+      technologies: ["Research & Analysis", "Content Creation", "Communication", "Sustainability Knowledge"]
     }
   ];
 

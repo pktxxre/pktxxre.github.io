@@ -44,11 +44,22 @@ export default function App() {
         </div>
         <div className="right-column">
           <main className="content-sections">
-            <section id="about" className="section"><About /></section>
-            <section id="experience" className="section"><Experience /></section>
-            <section id="projects" className="section"><Projects /></section>
-            <section id="skills" className="section"><Skills /></section>
-            <section id="contact" className="section"><Contact /></section>
+            <section id="about" className="section">
+              <h1 className="section-header">About</h1>
+              <About />
+            </section>
+            <section id="experience" className="section">
+              <h1 className="section-header">Experience</h1>
+              <Experience />
+            </section>
+            <section id="projects" className="section">
+              <h1 className="section-header">Projects</h1>
+              <Projects />
+            </section>
+            <section id="skills" className="section">
+              <h1 className="section-header">Skills</h1>
+              <Skills />
+            </section>
           </main>
         </div>
       </div>
