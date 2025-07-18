@@ -3,32 +3,26 @@ import React from 'react';
 export default function Skills() {
   const skillCategories = [
     {
-      category: "Frontend Technologies",
+      category: "Technical Skills",
       skills: [
-        "React", "Next.js", "Vue.js", "TypeScript", "JavaScript (ES6+)", 
-        "HTML5", "CSS3", "Sass/SCSS", "Tailwind CSS", "Bootstrap"
+        "Python", "Java", "Powershell", "Quantum GIS", "R",
+        "React", "JavaScript", "HTML", "CSS", "Bootstrap",
+        "IT Operations", "Git", "Figma", "Canva"
       ]
     },
     {
-      category: "Backend & Database",
+      category: "Communication & Collaboration",
       skills: [
-        "Node.js", "Express.js", "Python", "PostgreSQL", "MongoDB", 
-        "MySQL", "Redis", "GraphQL", "REST APIs", "Socket.io"
+        "Communication", "Team Leadership", "Goal orientation", "Public-facing communication",
+        "Educational communication", "Community engagement", "Student engagement"
       ]
     },
     {
-      category: "Tools & Platforms",
+      category: "Strategic & Instructional Skills",
       skills: [
-        "Git", "Docker", "AWS", "Vercel", "Netlify", "Heroku", 
-        "Webpack", "Vite", "Jest", "Cypress", "Figma", "Adobe Creative Suite"
-      ]
-    },
-    {
-      category: "Methodologies",
-      skills: [
-        "Agile/Scrum", "Test-Driven Development", "Responsive Design", 
-        "Accessibility (WCAG)", "Performance Optimization", "SEO", 
-        "CI/CD", "Code Reviews"
+        "Trend analysis", "Content creation",
+        "Visual storytelling", "Values driven", "Community engagement", 
+        "Ethical awareness", "Instructional design"
       ]
     }
   ];
