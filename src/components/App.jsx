@@ -3,7 +3,6 @@ import Sidebar from './SideBar';
 import About from '../pages/AboutPage';
 import Experience from '../pages/Experience';
 import Projects from '../pages/Projects';
-import Contact from '../pages/Contacts';
 import Skills from '../pages/Skills';
 import './App.css';
 import useActiveSection from '../hooks/useActiveSection';

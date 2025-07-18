@@ -425,6 +425,47 @@ html, body {
   transform: translateY(-2px);
 }
 
+/* Resume button styles */
+.resume-button-container {
+  margin-top: 32px;
+  padding-top: 24px;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ffffff !important;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 12px 0;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-button:hover {
+  color: #38bdf8 !important;
+  text-decoration: none;
+}
+
+.resume-text {
+  transition: color 0.2s ease;
+}
+
+.resume-arrow {
+  width: 16px;
+  height: 16px;
+  transition: all 0.2s ease;
+  transform: translateX(0) translateY(0);
+  flex-shrink: 0;
+}
+
+.resume-button:hover .resume-arrow {
+  transform: translateX(4px) translateY(-4px);
+}
+
 /* Responsive design */
 @media (max-width: 1024px) {
   .main-layout {
