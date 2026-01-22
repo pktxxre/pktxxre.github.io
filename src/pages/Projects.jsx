@@ -24,8 +24,6 @@ export default Projects;
 */
 
 import React from 'react';
-import uwHubLogo from '../components/img/uw-hub-logo.png';
-import revivo from '../components/img/Revivo.png';
 
 export default function Projects() {
   const projects = [
@@ -33,14 +31,14 @@ export default function Projects() {
       title: "UW Study Hub",
       description: "Collaborated with a team of four to design a responsive platform that improves study efficiency for University of Washington students, making it easier to create, store, and review flashcards on any device.",
       technologies: ["React", "JavaScript", "CSS", "HTML"],
-      image: uwHubLogo,
+      image: uw-hub-logo.png,
       github: "https://github.com/info340-wi25a/project-SantiagoG14",
     },
     {
       title: "Revivo",
       description: "Collaborated with a team of three to design a sustainability-focused app supporting the Right to Repair movement, using Figma to prototype features that help students reduce electronic waste.",
       technologies: ["Figma", "Usability testing", "User testing", "User research", "Prototyping"],
-      image: revivo,
+      image: "/Revivo.png",
       demo: "https://www.figma.com/proto/0FlEqTnLaHVyFTnfLRvJ4r/Revivo?node-id=189-1318&p=f&t=SDFonaZgSGx7WEM8-1&scaling=scale-down&content-scaling=fixed&page-id=4%3A35&starting-point-node-id=189%3A1318"
     }
     /*
