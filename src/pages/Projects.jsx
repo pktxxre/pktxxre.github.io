@@ -31,7 +31,7 @@ export default function Projects() {
       title: "UW Study Hub",
       description: "Collaborated with a team of four to design a responsive platform that improves study efficiency for University of Washington students, making it easier to create, store, and review flashcards on any device.",
       technologies: ["React", "JavaScript", "CSS", "HTML"],
-      image: uw-hub-logo.png,
+      image: "/uw-hub-logo.png",
       github: "https://github.com/info340-wi25a/project-SantiagoG14",
     },
     {
