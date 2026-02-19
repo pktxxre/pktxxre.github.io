@@ -34,11 +34,7 @@ import React from 'react';
 export default function About() {
   return (
     <div className="about-content">
-      <p>
-      Hello! I'm a senior at the University of Washington studying Informatics, with a strong interest in building ethical, 
-      human-centered technologies. I'm especially passionate about sustainable and responsible data use, how 
-      we design systems that not only work well, but also respect users and the world around them.
-      </p>
+      
       
       <p>
       I am currently deepening my skills in frontend development, and exploring the intersection of law and technology, 
