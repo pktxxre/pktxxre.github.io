@@ -10,7 +10,7 @@ export default function Experience() {
       technologies: ["IT Operations", "Powershell", "Customer Support"]
     },
     {
-      date: "October 2024 - Present",
+      date: "October 2024 - September 2025",
       title: "Sustainable Business Researcher",
       company: "ReThink @ University of Washington",
       description: "Wrote business spotlights for our RSO website, highlighting local Seattle businesses with strong sustainability practices and encouraging student engagement and support.",
