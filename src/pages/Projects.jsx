@@ -2,8 +2,25 @@ import React from 'react';
 import uwHubLogo from '../components/img/StudyHub/uw-hub-logo.png';
 import revivo from '../components/img/Revivo/Revivo.png';
 
+const ArrowIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="link-arrow">
+    <path d="M7 17L17 7M17 7H7M17 7V17" />
+  </svg>
+);
+
 export default function Projects() {
   const projects = [
+    {
+      title: 'Digital i-D',
+      course: 'Informatics Capstone Final Project',
+      date: 'January 2026 – Present',
+      descriptions: [
+        'Co-led a 5-person team in designing a privacy-first tool that visualizes how much user data is collected while browsing online.',
+        'Guided users through an interactive quiz and walkthrough, then generated a personalized report showing what information could be inferred from their browsing behavior, followed by a curated list of tools to help minimize data leakage and improve online privacy.',
+      ],
+      technologies: ['Privacy', 'Data Visualization', 'UX Design', 'React'],
+      github: 'https://github.com/chuntr/datamirror',
+    },
     {
       title: 'UW Study Hub',
       course: 'Client-side Development',
@@ -38,17 +55,6 @@ export default function Projects() {
       ],
       technologies: ['QGIS', 'Spatial Analysis', 'Data Processing', 'Cartography'],
     },
-    {
-      title: 'Digital i-D',
-      course: 'Informatics Capstone Final Project',
-      date: 'January 2026 – Present',
-      descriptions: [
-        'Co-led a 5-person team in designing a privacy-first tool that visualizes how much user data is collected while browsing online.',
-        'Guided users through an interactive quiz and walkthrough, then generated a personalized report showing what information could be inferred from their browsing behavior, followed by a curated list of tools to help minimize data leakage and improve online privacy.',
-      ],
-      technologies: ['Privacy', 'Data Visualization', 'UX Design', 'React'],
-      github: 'https://github.com/chuntr/datamirror',
-    },
   ];
 
   return (
@@ -65,15 +71,7 @@ export default function Projects() {
               <span className="project-course">{project.course}</span>
               <span className="project-date">{project.date}</span>
             </div>
-            <h3>
-              {project.github ? (
-                <a href={project.github} target="_blank" rel="noopener noreferrer">{project.title}</a>
-              ) : project.demo ? (
-                <a href={project.demo} target="_blank" rel="noopener noreferrer">{project.title}</a>
-              ) : (
-                project.title
-              )}
-            </h3>
+            <h3>{project.title}</h3>
             {project.descriptions.map((desc, i) => (
               <p key={i} className="project-description">{desc}</p>
             ))}
@@ -84,10 +82,14 @@ export default function Projects() {
             </div>
             <div className="project-links">
               {project.github && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link-btn">
+                  GitHub <ArrowIcon />
+                </a>
               )}
               {project.demo && (
-                <a href={project.demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link-btn">
+                  Live Demo <ArrowIcon />
+                </a>
               )}
             </div>
           </div>

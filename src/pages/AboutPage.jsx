@@ -4,20 +4,11 @@ export default function About() {
   return (
     <div className="about-content">
       <p>
-        Hello! I'm a senior at the University of Washington studying Informatics, with a strong interest in building ethical,
-        human-centered technologies. I'm especially passionate about sustainable and responsible data use, how
-        we design systems that not only work well, but also respect users and the world around them.
-      </p>
-      <p>
-        I am currently deepening my skills in frontend development, and exploring the intersection of law and technology,
-        with the goal of attending law school and contributing to AI governance through thoughtful,
-        forward-looking legislation that helps steer emerging technologies toward a more equitable future.
-        I love learning from others, tackling new challenges, and connecting with people
-        who care about the intersection of technology, ethics, and design.
-      </p>
-      <p>
-        When I'm not coding, you'll find me reading, climbing, or diving into side projects to sharpen my programming skills.
-        Feel free to reach out—whether it's about a project, opportunity, or just a good book recommendation!
+        I am studying at the University of Washington pursuing Informatics with a Data Science minor.
+        I am passionate about ethical and sustainable data use, eager to learn, grow and connect with
+        like-minded individuals and professionals in the field. In my free time I love reading, climbing,
+        and working on my programming skills. Feel free to reach out to chat about any exciting projects,
+        opportunities, or shared interests!
       </p>
     </div>
   );

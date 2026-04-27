@@ -18,10 +18,10 @@ export default function SideBar({ activeId }) {
           <h1 className="name">Alex Berry</h1>
           <h2 className="title">Web Developer</h2>
           <p className="description">
-            Student at the University of Washington, Seattle.
+            Informatics @ UW | Project Management | Leadership | Data Analysis
           </p>
           <a
-            href="/path-to-your-resume.pdf"
+            href="https://raw.githubusercontent.com/pktxxre/AlexBerryResume.github.io/main/Alex%20Berry%20Resume2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-button"

@@ -16,19 +16,10 @@ const searhcPhotos = [
 ];
 
 export default function Experience() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [fullscreenPhoto, setFullscreenPhoto] = useState(null);
 
   const experiences = [
-    {
-      date: 'March 2025 – December 2025',
-      title: 'First-Year Interest Group Leader',
-      company: 'First Year Programs · University of Washington, Seattle, WA',
-      descriptions: [
-        'Led and mentored a cohort of 25 first-year Informatics students, providing academic and professional guidance through weekly sessions.',
-        'Designed and delivered an innovative curriculum with active learning strategies, improving student engagement and academic preparedness based on feedback.',
-      ],
-      technologies: ['Leadership', 'Mentorship', 'Curriculum Design', 'Student Engagement'],
-    },
     {
       date: 'June 2025 – August 2025',
       title: 'Sealaska IT Intern',
@@ -39,6 +30,16 @@ export default function Experience() {
       ],
       technologies: ['IT Operations', 'PowerShell', 'Healthcare IT', 'Asset Management'],
       photos: searhcPhotos,
+    },
+    {
+      date: 'March 2025 – December 2025',
+      title: 'First-Year Interest Group Leader',
+      company: 'First Year Programs · University of Washington, Seattle, WA',
+      descriptions: [
+        'Led and mentored a cohort of 25 first-year Informatics students, providing academic and professional guidance through weekly sessions.',
+        'Designed and delivered an innovative curriculum with active learning strategies, improving student engagement and academic preparedness based on feedback.',
+      ],
+      technologies: ['Leadership', 'Mentorship', 'Curriculum Design', 'Student Engagement'],
     },
     {
       date: 'July 2022 – June 2025',
@@ -52,20 +53,23 @@ export default function Experience() {
     },
   ];
 
-  const handleToggle = (index, hasPhotos) => {
-    if (!hasPhotos) return;
-    setExpandedIndex(expandedIndex === index ? null : index);
+  const openPhoto = (e, src) => {
+    e.stopPropagation();
+    setFullscreenPhoto(src);
   };
 
   return (
     <div className="experience-content">
       {experiences.map((exp, index) => (
-        <div
-          key={index}
-          className={`experience-item${exp.photos ? ' clickable' : ''}`}
-          onClick={() => handleToggle(index, !!exp.photos)}
-        >
-          <div className="experience-date">{exp.date}</div>
+        <div key={index} className="experience-item">
+          <div className="experience-left">
+            <div className="experience-date">{exp.date}</div>
+            {exp.photos && (
+              <button className="view-photos-btn" onClick={() => setShowModal(true)}>
+                View Photos
+              </button>
+            )}
+          </div>
           <div className="experience-details">
             <h3>{exp.title}</h3>
             <div className="experience-company">{exp.company}</div>
@@ -77,21 +81,31 @@ export default function Experience() {
                 <span key={i} className="tech-tag">{tech}</span>
               ))}
             </div>
-            {exp.photos && (
-              <div className="expand-hint">
-                {expandedIndex === index ? '▲ Hide photos' : '▼ View photos'}
-              </div>
-            )}
-            {exp.photos && expandedIndex === index && (
-              <div className="photo-grid">
-                {exp.photos.map((src, i) => (
-                  <img key={i} src={src} alt={`SEARHC photo ${i + 1}`} className="photo-grid-item" />
-                ))}
-              </div>
-            )}
           </div>
         </div>
       ))}
+
+      {showModal && (
+        <div className="photo-modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="photo-modal-grid" onClick={(e) => e.stopPropagation()}>
+            {searhcPhotos.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`SEARHC photo ${i + 1}`}
+                className="photo-modal-item"
+                onClick={(e) => openPhoto(e, src)}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {fullscreenPhoto && (
+        <div className="photo-fullscreen-overlay" onClick={() => setFullscreenPhoto(null)}>
+          <img src={fullscreenPhoto} alt="Fullscreen" className="photo-fullscreen-img" />
+        </div>
+      )}
     </div>
   );
 }
