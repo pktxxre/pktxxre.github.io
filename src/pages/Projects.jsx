@@ -1,94 +1,94 @@
-/*
 import React from 'react';
-//import { Routes, Route } from 'react-router-dom';
-import AboutPage from './AboutPage';
-// import Projects from './Projects';
-// import Experience from './Experience';
-// import Conrtacts from './Contacts';
-
-const Projects = () => {
-  return (
-    <div className="ml-1/2 w-1/2 h-screen overflow-y-scroll p-8 pl-[calc(50%+2rem)]">
-      <Routes>
-        <Route path="/" element={<AboutPage />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/Contacts" element={<Contacts />} />
-        
-      </Routes>
-    </div>
-  );
-};
-
-export default Projects;
-*/
-
-import React from 'react';
-import uwHubLogo from '../components/img/uw-hub-logo.png';
-import revivo from '../components/img/Revivo.png';
+import uwHubLogo from '../components/img/StudyHub/uw-hub-logo.png';
+import revivo from '../components/img/Revivo/Revivo.png';
 
 export default function Projects() {
   const projects = [
     {
-      title: "UW Study Hub",
-      description: "Collaborated with a team of four to design a responsive platform that improves study efficiency for University of Washington students, making it easier to create, store, and review flashcards on any device.",
-      technologies: ["React", "JavaScript", "CSS", "HTML"],
+      title: 'UW Study Hub',
+      course: 'Client-side Development',
+      date: 'January 2025 – March 2025',
+      descriptions: [
+        'Collaborated with a team of four to design a responsive platform that improves study efficiency for University of Washington students, making it easier to create, store, and review flashcards on any device.',
+        'Developed and implemented a flashcard creation feature using HTML, CSS, JavaScript, and React, allowing students to generate and organize custom study sets to enhance their learning experience.',
+      ],
+      technologies: ['React', 'JavaScript', 'CSS', 'HTML'],
       image: uwHubLogo,
-      github: "https://github.com/info340-wi25a/project-SantiagoG14",
+      github: 'https://github.com/info340-wi25a/project-SantiagoG14',
     },
     {
-      title: "Revivo",
-      description: "Collaborated with a team of three to design a sustainability-focused app supporting the Right to Repair movement, using Figma to prototype features that help students reduce electronic waste.",
-      technologies: ["Figma", "Usability testing", "User testing", "User research", "Prototyping"],
+      title: 'Revivo',
+      course: 'Design Methods',
+      date: 'January 2025 – March 2025',
+      descriptions: [
+        'Collaborated with a team of three to design a sustainability-focused app supporting the Right to Repair movement, using Figma to prototype features that help students reduce electronic waste.',
+        'Conducted user interviews and usability testing to identify key repair-related pain points, iterating on designs based on student feedback to improve usability.',
+      ],
+      technologies: ['Figma', 'Usability Testing', 'User Research', 'Prototyping'],
       image: revivo,
-      demo: "https://www.figma.com/proto/0FlEqTnLaHVyFTnfLRvJ4r/Revivo?node-id=189-1318&p=f&t=SDFonaZgSGx7WEM8-1&scaling=scale-down&content-scaling=fixed&page-id=4%3A35&starting-point-node-id=189%3A1318"
-    }
-    /*
+      demo: 'https://www.figma.com/proto/0FlEqTnLaHVyFTnfLRvJ4r/Revivo?node-id=189-1318&p=f&t=SDFonaZgSGx7WEM8-1&scaling=scale-down&content-scaling=fixed&page-id=4%3A35&starting-point-node-id=189%3A1318',
+    },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather application that provides current weather conditions and forecasts. Features location-based weather data, search functionality, and beautiful data visualizations.",
-      technologies: ["React", "OpenWeather API", "Chart.js", "Tailwind CSS", "Geolocation API"],
-      image: "/api/placeholder/120/80",
-      github: "https://github.com/yourusername/weather-dashboard",
-      demo: "https://weather-dashboard-demo.surge.sh"
-    } */
+      title: 'GIS Analysis of Alcohol Outlet Density, Poverty, and Crash Rates',
+      course: 'GIS and Mapping',
+      date: 'March 2024 – June 2024',
+      descriptions: [
+        'GIS and spatial analysis coursework showcasing strong analytical skills through data processing, re-projection, and multi-layer mapping of alcohol outlet density, poverty, and alcohol-related crash rates in King County.',
+        'Applied advanced spatial analysis techniques including intersection, dot density, and proportional symbol mapping to reveal meaningful correlations between socioeconomic factors and traffic safety outcomes.',
+      ],
+      technologies: ['QGIS', 'Spatial Analysis', 'Data Processing', 'Cartography'],
+    },
+    {
+      title: 'Digital i-D',
+      course: 'Informatics Capstone Final Project',
+      date: 'January 2026 – Present',
+      descriptions: [
+        'Co-led a 5-person team in designing a privacy-first tool that visualizes how much user data is collected while browsing online.',
+        'Guided users through an interactive quiz and walkthrough, then generated a personalized report showing what information could be inferred from their browsing behavior, followed by a curated list of tools to help minimize data leakage and improve online privacy.',
+      ],
+      technologies: ['Privacy', 'Data Visualization', 'UX Design', 'React'],
+      github: 'https://github.com/chuntr/datamirror',
+    },
   ];
 
   return (
     <div className="projects-content">
       {projects.map((project, index) => (
         <div key={index} className="project-card">
-          <div className="project-image">
-            <img src={project.image} alt={project.title} />
-          </div>
+          {project.image && (
+            <div className="project-image">
+              <img src={project.image} alt={project.title} />
+            </div>
+          )}
           <div className="project-content">
+            <div className="project-meta">
+              <span className="project-course">{project.course}</span>
+              <span className="project-date">{project.date}</span>
+            </div>
             <h3>
-              <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                {project.title}
-              </a>
+              {project.github ? (
+                <a href={project.github} target="_blank" rel="noopener noreferrer">{project.title}</a>
+              ) : project.demo ? (
+                <a href={project.demo} target="_blank" rel="noopener noreferrer">{project.title}</a>
+              ) : (
+                project.title
+              )}
             </h3>
-            <p className="project-description">{project.description}</p>
+            {project.descriptions.map((desc, i) => (
+              <p key={i} className="project-description">{desc}</p>
+            ))}
             <div className="tech-stack">
-              {project.technologies.map((tech, techIndex) => (
-                <span key={techIndex} className="tech-tag">{tech}</span>
+              {project.technologies.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
               ))}
             </div>
-            <div className="project-links" style={{ marginTop: '16px' }}>
-              <a 
-                href={project.github} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{ marginRight: '16px' }}
-              >
-                GitHub
-              </a>
-              <a 
-                href={project.demo} 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Live Demo
-              </a>
+            <div className="project-links">
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+              )}
+              {project.demo && (
+                <a href={project.demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
+              )}
             </div>
           </div>
         </div>

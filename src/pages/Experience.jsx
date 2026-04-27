@@ -1,55 +1,97 @@
-import React from 'react';
+import React, { useState } from 'react';
+import img2212 from '../components/img/SEARHC/IMG_2212.JPG';
+import img2413 from '../components/img/SEARHC/IMG_2413.JPG';
+import img2476 from '../components/img/SEARHC/IMG_2476.JPG';
+import img2615 from '../components/img/SEARHC/IMG_2615.JPG';
+import img2807 from '../components/img/SEARHC/IMG_2807.JPG';
+import img2824 from '../components/img/SEARHC/IMG_2824.JPG';
+import img2870 from '../components/img/SEARHC/IMG_2870.JPG';
+import img2871 from '../components/img/SEARHC/IMG_2871.JPG';
+import img2872 from '../components/img/SEARHC/IMG_2872.JPG';
+import img2873 from '../components/img/SEARHC/IMG_2873.JPG';
+
+const searhcPhotos = [
+  img2212, img2413, img2476, img2615, img2807,
+  img2824, img2870, img2871, img2872, img2873,
+];
 
 export default function Experience() {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
   const experiences = [
     {
-      date: "June 2025 - August 2025",
-      title: "Information Technology Support Specialist Intern",
-      company: "SouthEast Alaska Regional Health Consortium (SEARHC)",
-      description: "Collaborated with a team of four to design a responsive platform that improves study efficiency for University of Washington students, making it easier to create, store, and review flashcards on any device.",
-      technologies: ["IT Operations", "Powershell", "Customer Support"]
+      date: 'March 2025 – December 2025',
+      title: 'First-Year Interest Group Leader',
+      company: 'First Year Programs · University of Washington, Seattle, WA',
+      descriptions: [
+        'Led and mentored a cohort of 25 first-year Informatics students, providing academic and professional guidance through weekly sessions.',
+        'Designed and delivered an innovative curriculum with active learning strategies, improving student engagement and academic preparedness based on feedback.',
+      ],
+      technologies: ['Leadership', 'Mentorship', 'Curriculum Design', 'Student Engagement'],
     },
     {
-      date: "October 2024 - September 2025",
-      title: "Sustainable Business Researcher",
-      company: "ReThink @ University of Washington",
-      description: "Wrote business spotlights for our RSO website, highlighting local Seattle businesses with strong sustainability practices and encouraging student engagement and support.",
-      technologies: ["Research & Analysis", "Content Creation", "Communication", "Sustainability Knowledge"]
-    }
+      date: 'June 2025 – August 2025',
+      title: 'Sealaska IT Intern',
+      company: 'SEARHC · Southeast Alaska Regional Health Consortium, Juneau, AK',
+      descriptions: [
+        'Led a large-scale deployment and configuration of 50+ clinical computers in a remote Alaskan community, ensuring secure integration into healthcare environments and supporting new hire onboarding with personalized IT setups.',
+        'Improved IT operations by automating system administration tasks and revitalizing the asset inventory system, enhancing equipment tracking and team efficiency.',
+      ],
+      technologies: ['IT Operations', 'PowerShell', 'Healthcare IT', 'Asset Management'],
+      photos: searhcPhotos,
+    },
+    {
+      date: 'July 2022 – June 2025',
+      title: 'Assistant Manager',
+      company: "Shiga's Imports, Seattle, WA",
+      descriptions: [
+        'Led scheduling and workforce coordination for a team of 13 employees, ensuring efficient coverage for daily operations and major events while optimizing team productivity.',
+        'Managed front shop displays and product research to support customer engagement and brand visibility, successfully leading the team to win first place in a local display contest for two consecutive years.',
+      ],
+      technologies: ['Team Leadership', 'Operations Management', 'Customer Service', 'Workforce Coordination'],
+    },
   ];
+
+  const handleToggle = (index, hasPhotos) => {
+    if (!hasPhotos) return;
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <div className="experience-content">
       {experiences.map((exp, index) => (
-        <div key={index} className="experience-item">
+        <div
+          key={index}
+          className={`experience-item${exp.photos ? ' clickable' : ''}`}
+          onClick={() => handleToggle(index, !!exp.photos)}
+        >
           <div className="experience-date">{exp.date}</div>
-          <div className="experience-content">
+          <div className="experience-details">
             <h3>{exp.title}</h3>
             <div className="experience-company">{exp.company}</div>
-            <p className="experience-description">{exp.description}</p>
+            {exp.descriptions.map((desc, i) => (
+              <p key={i} className="experience-description">{desc}</p>
+            ))}
             <div className="tech-stack">
-              {exp.technologies.map((tech, techIndex) => (
-                <span key={techIndex} className="tech-tag">{tech}</span>
+              {exp.technologies.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
               ))}
             </div>
+            {exp.photos && (
+              <div className="expand-hint">
+                {expandedIndex === index ? '▲ Hide photos' : '▼ View photos'}
+              </div>
+            )}
+            {exp.photos && expandedIndex === index && (
+              <div className="photo-grid">
+                {exp.photos.map((src, i) => (
+                  <img key={i} src={src} alt={`SEARHC photo ${i + 1}`} className="photo-grid-item" />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       ))}
-      
-      {/* Resume button */}
-      <div className="resume-button-container">
-        <a 
-          href="/path-to-your-resume.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="resume-button"
-        >
-          <span className="resume-text">View Full Résumé</span>
-          <svg className="resume-arrow" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 17L17 7M17 7H7M17 7V17"/>
-          </svg>
-        </a>
-      </div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ import useActiveSection from '../hooks/useActiveSection';
 
 export default function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const activeId = useActiveSection(['about', 'experience', 'projects', 'skills', 'contact']);
+  const activeId = useActiveSection(['about', 'experience', 'projects', 'skills']);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
