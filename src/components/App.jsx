@@ -6,10 +6,19 @@ import Projects from '../pages/Projects';
 import Skills from '../pages/Skills';
 import './App.css';
 import useActiveSection from '../hooks/useActiveSection';
+import useSmoothScroll from '../hooks/useSmoothScroll';
+
+const navItems = [
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
+];
 
 export default function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const activeId = useActiveSection(['about', 'experience', 'projects', 'skills']);
+  const scrollToSection = useSmoothScroll();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -21,7 +30,6 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {/* SVG gradient layer */}
       <svg className="gradient-overlay">
         <defs>
           <radialGradient id="mouseGradient" r="0.4">
@@ -29,19 +37,26 @@ export default function App() {
             <stop offset="100%" stopColor="transparent" />
           </radialGradient>
         </defs>
-        <circle
-          cx={mousePos.x}
-          cy={mousePos.y}
-          r="300"
-          fill="url(#mouseGradient)"
-        />
+        <circle cx={mousePos.x} cy={mousePos.y} r="300" fill="url(#mouseGradient)" />
       </svg>
 
       <div className="main-layout">
         <div className="left-column">
-          <Sidebar activeId={activeId} />
+          <Sidebar />
         </div>
         <div className="right-column">
+          <nav className="section-nav">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`section-nav-link ${activeId === item.id ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
           <main className="content-sections">
             <section id="about" className="section">
               <h1 className="section-header">About</h1>

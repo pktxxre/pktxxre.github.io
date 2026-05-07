@@ -4,25 +4,22 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html, body {
   height: 100%;
   background-color: #0f172a;
   color: #94a3b8;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* App container */
 .app-container {
   background-color: #0f172a;
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 /* Gradient overlay */
@@ -40,39 +37,45 @@ html, body {
 /* Main layout */
 .main-layout {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
 
 .left-column {
   width: 50%;
+  height: 100vh;
   padding-right: 24px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .right-column {
   width: 50%;
+  height: 100vh;
   padding-left: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Sidebar styles */
 .sidebar-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  padding: 96px 0;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .sidebar-content {
   display: flex;
   flex-direction: column;
-  height: 100%;
   max-width: 300px;
 }
 
@@ -188,18 +191,75 @@ html, body {
   fill: currentColor;
 }
 
-/* Content sections */
+/* Top nav — horizontal row above the page carousel */
+.section-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0 20px 0;
+  flex-shrink: 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.section-nav-link {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.25s ease;
+  transform-origin: center bottom;
+  display: inline-block;
+}
+
+.section-nav-link:hover {
+  color: #94a3b8;
+}
+
+.section-nav-link.active {
+  color: #e2e8f0;
+  transform: scale(1.18);
+}
+
+/* Content sections — horizontal page carousel */
 .content-sections {
-  padding: 96px 0 200px 0;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  position: relative;
+}
+
+.content-sections {
+  scrollbar-width: none;
+}
+
+.content-sections::-webkit-scrollbar {
+  display: none;
 }
 
 .section {
-  margin-bottom: 150px;
-  scroll-margin-top: 96px;
+  flex: 0 0 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 96px 0;
+  scrollbar-width: none;
+}
+
+.section::-webkit-scrollbar {
+  display: none;
 }
 
 .section:last-child {
-  margin-bottom: 100px;
+  padding-bottom: 96px;
 }
 
 /* Typography for content */
@@ -264,12 +324,6 @@ html, body {
   margin-bottom: 48px;
   padding: 24px;
   border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.experience-item:hover {
-  background-color: rgba(30, 41, 59, 0.5);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .experience-date {
@@ -319,12 +373,6 @@ html, body {
   margin-bottom: 48px;
   padding: 24px;
   border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-.project-card:hover {
-  background-color: rgba(30, 41, 59, 0.5);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project-image {
@@ -617,86 +665,82 @@ html, body {
 
 /* Responsive design */
 @media (max-width: 1024px) {
+  html, body {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  .app-container {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
   .main-layout {
     flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
     padding: 0 16px;
   }
-  
+
   .left-column,
   .right-column {
     width: 100%;
+    height: auto;
     padding: 0;
+    overflow: visible;
+    display: block;
+    align-items: unset;
+    justify-content: unset;
+    flex-direction: unset;
   }
-  
+
   .sidebar-container {
-    position: static;
     height: auto;
     padding: 48px 0;
   }
-  
+
   .sidebar-content {
     max-width: none;
   }
-  
-  /* Keep navigation in column layout and highlight all options */
-  .sidebar-nav {
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 32px;
-    background-color: rgba(30, 41, 59, 0.3);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid rgba(56, 189, 248, 0.2);
-  }
-  
-  /* Highlight all navigation links in responsive mode */
-  .nav-link {
-    color: #e2e8f0 !important;
-    background-color: rgba(56, 189, 248, 0.1);
-    padding: 12px 16px;
-    border-radius: 6px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-  }
-  
-  .nav-link .nav-indicator {
-    width: 48px;
-    background-color: #38bdf8;
-  }
-  
-  .nav-link:hover {
-    background-color: rgba(56, 189, 248, 0.2);
-    border-color: rgba(56, 189, 248, 0.5);
-  }
-  
-  .nav-link.active {
-    background-color: rgba(56, 189, 248, 0.2);
-    border-color: #38bdf8;
-  }
-  
-  .nav-link.active .nav-indicator {
-    width: 64px;
-    background-color: #38bdf8;
-  }
-  
+
   .name {
     font-size: 2.5rem;
   }
-  
+
+  .section-nav {
+    justify-content: space-around;
+    padding: 24px 0 16px 0;
+  }
+
+  /* Restore vertical stacking for mobile */
   .content-sections {
+    display: block;
+    overflow-x: visible;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    height: auto;
+    flex: none;
+    min-height: unset;
+    position: static;
     padding: 48px 0 150px 0;
   }
-  
+
   .section {
+    flex: none;
+    min-width: 0;
+    height: auto;
+    scroll-snap-align: none;
+    overflow-y: visible;
+    overflow-x: visible;
+    padding: 0;
     margin-bottom: 100px;
     scroll-margin-top: 48px;
   }
 
-  .section-header {
-    font-size: 1.75rem;
-    margin-bottom:32px;
-  }
-
   .section:last-child {
+    padding-bottom: 0;
     margin-bottom: 80px;
   }
 }

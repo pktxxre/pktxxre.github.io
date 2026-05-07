@@ -1,16 +1,6 @@
 import React from 'react';
-import useSmoothScroll from '../hooks/useSmoothScroll';
 
-export default function SideBar({ activeId }) {
-  const scrollToSection = useSmoothScroll();
-
-  const navItems = [
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-  ];
-
+export default function SideBar() {
   return (
     <div className="sidebar-container">
       <div className="sidebar-content">
@@ -32,20 +22,6 @@ export default function SideBar({ activeId }) {
             </svg>
           </a>
         </header>
-
-        <nav className="sidebar-nav">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={`nav-link ${activeId === item.id ? 'active' : ''}`}
-              onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
-            >
-              <span className="nav-indicator"></span>
-              <span className="nav-text">{item.label}</span>
-            </a>
-          ))}
-        </nav>
 
         <div className="sidebar-social">
           <a href="https://github.com/pktxxre" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
