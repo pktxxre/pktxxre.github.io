@@ -15,10 +15,10 @@ export default function Projects() {
       course: 'Informatics Capstone Final Project',
       date: 'January 2026 – Present',
       descriptions: [
-        'Co-led a 5-person team in designing a privacy-first tool that visualizes how much user data is collected while browsing online.',
-        'Guided users through an interactive quiz and walkthrough, then generated a personalized report showing what information could be inferred from their browsing behavior, followed by a curated list of tools to help minimize data leakage and improve online privacy.',
+        'Co-led a 5-person interdisciplinary team to create a privacy-first interactive educational tool that makes online surveillance visible and actionable. Designed the core user flow (quiz → simulation → personalized report) that helps users understand how everyday browsing behaviors generate data and enable profiling.',
+        'Built a fully functional prototype using React and Firebase that generates personalized privacy insights based on user behavior, complete with curated recommendations to reduce data exposure. Bridged complex privacy concepts into intuitive interactions, drawing from cybernetic and surveillance-inspired aesthetics to make invisible data systems tangible and understandable.',
       ],
-      technologies: ['Privacy', 'Data Visualization', 'UX Design', 'React'],
+      technologies: ['React', 'Firebase', 'Data Visualization', 'UX Design', 'Product Leadership', 'Privacy Education'],
       github: 'https://github.com/chuntr/datamirror',
     },
     {
