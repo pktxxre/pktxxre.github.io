@@ -15,8 +15,10 @@ export default function Projects() {
       course: 'Informatics Capstone Final Project',
       date: 'January 2026 – Present',
       descriptions: [
-        'Digital i-D makes online surveillance visible and actionable by bridging the gap between passive awareness and true behavioral understanding. Users often know tracking exists but don\'t grasp how their everyday browsing—clicks, scrolls, time spent—generates data that enables profiling and personalization. Our interactive experience connects specific user actions directly to data collection and inference, transforming abstract privacy concepts into tangible insight.',
-        'Co-led a 5-person interdisciplinary team to design the core user flow (quiz → simulation → personalized report) that helps users experientially understand their digital footprint. Built a fully functional prototype using React and Firebase that generates personalized privacy insights with curated recommendations, while drawing from cybernetic and surveillance-inspired aesthetics to make invisible data systems understandable and actionable.',
+        'Goals: Most users know tracking exists but don\'t understand how their behavior translates into data collection and profiling. Digital i-D bridges this gap by making online surveillance visible, intuitive, and actionable through an interactive educational experience.',
+        'Process: Co-led a 5-person interdisciplinary team meeting twice weekly to align on scope and progress. Designed the core user flow (quiz -> simulation -> personalized report) and contributed to frontend development using React and Firebase. Balanced technical implementation with UX design, translating complex privacy concepts into clear, user-friendly interactions.',
+        'Takeaways: Users learn privacy best through interaction, not passive information. Translating complex systems into intuitive experiences requires both technical and design thinking. Strong team structure with clear roles and consistent check-ins is critical for shipping a cohesive product.',
+        'Next Steps: Expand the tool with real-time tracking simulations or browser integration. Incorporate more personalized recommendations based on user risk profiles. Conduct user testing to refine usability and measure behavior change. Explore partnerships with digital literacy or privacy advocacy organizations.',
       ],
       technologies: ['React', 'Firebase', 'Data Visualization', 'UX Design', 'Product Leadership', 'Privacy Education'],
       github: 'https://github.com/chuntr/datamirror',
