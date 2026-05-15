@@ -15,7 +15,7 @@ export default function Projects() {
       course: 'Informatics Capstone Final Project',
       date: 'January 2026 – Present',
       descriptions: [
-        'Digital i-D makes online surveillance visible and actionable by bridging the gap between passive awareness and true behavioral understanding. Users often know tracking exists but don't grasp how their everyday browsing—clicks, scrolls, time spent—generates data that enables profiling and personalization. Our interactive experience connects specific user actions directly to data collection and inference, transforming abstract privacy concepts into tangible insight.',
+        'Digital i-D makes online surveillance visible and actionable by bridging the gap between passive awareness and true behavioral understanding. Users often know tracking exists but don\'t grasp how their everyday browsing—clicks, scrolls, time spent—generates data that enables profiling and personalization. Our interactive experience connects specific user actions directly to data collection and inference, transforming abstract privacy concepts into tangible insight.',
         'Co-led a 5-person interdisciplinary team to design the core user flow (quiz → simulation → personalized report) that helps users experientially understand their digital footprint. Built a fully functional prototype using React and Firebase that generates personalized privacy insights with curated recommendations, while drawing from cybernetic and surveillance-inspired aesthetics to make invisible data systems understandable and actionable.',
       ],
       technologies: ['React', 'Firebase', 'Data Visualization', 'UX Design', 'Product Leadership', 'Privacy Education'],
